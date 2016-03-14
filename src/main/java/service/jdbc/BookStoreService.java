@@ -18,7 +18,7 @@ public class BookStoreService {
         try {
             Class.forName("com.mysql.jdbc.Driver");
             connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/bookstore",
-                    "egor", "delphi78");
+                    "egor", "****");
             PreparedStatement stmt = connection.prepareStatement("INSERT INTO PUBLISHER (CODE, PUBLISHER_NAME) VALUES (?, ?)");
             stmt.setString(1, book.getPublisher().getCode());
             stmt.setString(2, book.getPublisher().getName());
@@ -47,7 +47,7 @@ public class BookStoreService {
         try {
             Class.forName("com.mysql.jdbc.Driver");
             connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/bookstore",
-                    "root", "password");
+                    "egor", "****");
             PreparedStatement stmt = connection.prepareStatement("SELECT * FROM BOOK, PUBLISHER WHERE BOOK.PUBLISHER_CODE = PUBLISHER.CODE AND BOOK.ISBN = ?");
             stmt.setString(1, isbn);
             ResultSet rs = stmt.executeQuery();
