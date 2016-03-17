@@ -10,7 +10,7 @@
         <property name="connection.url">jdbc:mysql://localhost:3306/hello-world?autoReconnect=true&amp;useSSL=false</property>
         <property name="connection.username">egor</property>
         <property name="connection.password">***</property>
-
+        <property name="hbm2ddl.auto">update</property>
         <!-- SQL dialect -->
         <property name="dialect">org.hibernate.dialect.MySQLDialect</property>
 
@@ -24,6 +24,7 @@
         <!--<mapping class="hibernate.entities.Message"/>-->
         <!--<mapping resource="mapping/message.hbm.xml" />-->
         <mapping class="hibernate.entities.Message" />
+        <mapping class="hibernate.chapter4.domain.Person"/>
 
     </session-factory>
 </hibernate-configuration>
