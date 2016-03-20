@@ -17,18 +17,12 @@ public class PersonClient {
         person.setLastName("Maiorov");
         person.setHomeAddress(new Address("Kiev", "Mashinobudivna","01013"));
         person.setWorkAddress(new Address("Kiev", "Radisheva st", "01013"));
-        person.setGuide(guide);
 
         Session session = sessionFactory.openSession();
         session.beginTransaction();
 
-//        session.persist(person);
+        session.persist(person);
 
-        person = session.get(Person.class, 1l);
-        session.delete(person);
-
-        //lets try to get person from db and print it
-//
 //        person = session.get(Person.class, 1l);
 //        System.out.println(person.toString());
 

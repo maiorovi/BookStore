@@ -1,6 +1,8 @@
 package hibernate.chapter4.domain;
 
 import javax.persistence.*;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 @Table(name = "guide")
@@ -16,6 +18,9 @@ public class Guide {
     private Integer salary;
     @Column(name = "name")
     private String name;
+
+    @OneToMany(mappedBy = "guide", cascade = {CascadeType.PERSIST})
+    private Set<Student> students = new HashSet<>();
 
     public Guide(){}
 
@@ -55,5 +60,18 @@ public class Guide {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public Set<Student> getStudents() {
+        return students;
+    }
+
+    public void setStudents(Set<Student> students) {
+        this.students = students;
+    }
+
+    public void addStudent(Student student) {
+        students.add(student);
+        student.setGuide(this);
     }
 }

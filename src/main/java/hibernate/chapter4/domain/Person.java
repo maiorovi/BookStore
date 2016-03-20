@@ -31,9 +31,6 @@ public class Person {
 
     })
     private Address workAddress;
-    @ManyToOne(cascade = {CascadeType.PERSIST, CascadeType.REMOVE})
-    @JoinColumn( name = "guide_id")
-    private Guide guide;
 
     public Person(){}
 
@@ -75,14 +72,6 @@ public class Person {
 
     public void setHomeAddress(Address homeAddress) {
         this.homeAddress = homeAddress;
-    }
-
-    public Guide getGuide() {
-        return guide;
-    }
-
-    public void setGuide(Guide guide) {
-        this.guide = guide;
     }
 
     @Override
