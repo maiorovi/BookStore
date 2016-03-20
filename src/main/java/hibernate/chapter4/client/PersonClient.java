@@ -22,9 +22,10 @@ public class PersonClient {
         Session session = sessionFactory.openSession();
         session.beginTransaction();
 
-        session.save(guide);
-        session.save(person);
+//        session.persist(person);
 
+        person = session.get(Person.class, 1l);
+        session.delete(person);
 
         //lets try to get person from db and print it
 //

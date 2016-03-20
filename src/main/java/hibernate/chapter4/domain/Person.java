@@ -31,7 +31,7 @@ public class Person {
 
     })
     private Address workAddress;
-    @ManyToOne
+    @ManyToOne(cascade = {CascadeType.PERSIST, CascadeType.REMOVE})
     @JoinColumn( name = "guide_id")
     private Guide guide;
 
