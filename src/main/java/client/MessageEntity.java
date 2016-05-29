@@ -2,9 +2,6 @@ package client;
 
 import javax.persistence.*;
 
-/**
- * Created by Egor on 15.03.2016.
- */
 @Entity
 @Table(name = "message", schema = "hello-world", catalog = "")
 public class MessageEntity {
