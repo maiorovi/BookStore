@@ -53,4 +53,13 @@ public class Student {
     public void setGuide(Guide guide) {
         this.guide = guide;
     }
+
+    @Override
+    public String toString() {
+        return "Student{" +
+                "id=" + id +
+                ", enrollmentId='" + enrollmentId + '\'' +
+                ", name='" + name + '\'' +
+                '}';
+    }
 }
