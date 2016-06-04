@@ -22,6 +22,11 @@ public class Student {
 
     public Student() {}
 
+    public Student(String name, String enrollmentId) {
+        this.name = name;
+        this.enrollmentId = enrollmentId;
+    }
+
     public int getId() {
         return id;
     }

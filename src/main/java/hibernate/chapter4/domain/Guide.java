@@ -19,7 +19,7 @@ public class Guide {
     @Column(name = "name")
     private String name;
 
-    @OneToMany(mappedBy = "guide", cascade = {CascadeType.PERSIST})
+    @OneToMany(mappedBy = "guide", cascade = {CascadeType.PERSIST}, fetch = FetchType.EAGER)
     private Set<Student> students = new HashSet<>();
 
     public Guide(){}
@@ -73,5 +73,15 @@ public class Guide {
     public void addStudent(Student student) {
         students.add(student);
         student.setGuide(this);
+    }
+
+    @Override
+    public String toString() {
+        return "Guide{" +
+                "id=" + id +
+                ", stuffId='" + stuffId + '\'' +
+                ", salary=" + salary +
+                ", name='" + name + '\'' +
+                '}';
     }
 }
