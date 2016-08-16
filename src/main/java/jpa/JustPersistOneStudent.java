@@ -23,10 +23,10 @@ public class JustPersistOneStudent {
         Student john = new Student("John Smith", "e031569");
         john.setGuide(guide1);
 //
-//        em.persist(amy);
-//        em.persist(john);
-//        em.persist(bruceLee);
-        em.persist(guide0);
+        em.persist(amy);
+        em.persist(john);
+        em.persist(bruceLee);
+//        em.persist(guide0);
 
         et.commit();
 

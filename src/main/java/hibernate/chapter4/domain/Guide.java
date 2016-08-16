@@ -1,6 +1,11 @@
 package hibernate.chapter4.domain;
 
+import org.hibernate.annotations.*;
+
 import javax.persistence.*;
+import javax.persistence.CascadeType;
+import javax.persistence.Entity;
+import javax.persistence.Table;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -20,6 +25,7 @@ public class Guide {
     private String name;
 
     @OneToMany(mappedBy = "guide", cascade = {CascadeType.PERSIST}, fetch = FetchType.EAGER)
+    @Cascade(value = org.hibernate.annotations.CascadeType.MERGE)
     private Set<Student> students = new HashSet<>();
 
     public Guide(){}

@@ -8,7 +8,7 @@ import domain.Book;
 import domain.Chapter;
 import domain.Publisher;
 
-public class BookStoreClient {
+public class BookstoreClient {
     public static void main(String[] args) {
         BookStoreService bookStoreService = new BookStoreService();
 //persisting object graph
