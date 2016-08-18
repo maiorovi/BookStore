@@ -26,7 +26,7 @@ public class JustPersistOneStudent {
         em.persist(amy);
         em.persist(john);
         em.persist(bruceLee);
-//        em.persist(guide0);
+        em.persist(guide0);
 
         et.commit();
 

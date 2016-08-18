@@ -26,8 +26,6 @@ public class PersonClient {
 //        person = session.get(Person.class, 1l);
 //        System.out.println(person.toString());
 
-
-
         session.getTransaction().commit();
         session.close();
     }

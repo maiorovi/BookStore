@@ -11,6 +11,9 @@
         <class>hibernate.chapter4.domain.Guide</class>
         <class>jpa.entities.Alert</class>
         <class>jpa.versioning.Teacher</class>
+        <class>jpa.hierarchy_mapping.Animal</class>
+        <class>jpa.hierarchy_mapping.Cat</class>
+        <class>jpa.hierarchy_mapping.Dog</class>
         <properties>
             <property name="javax.persistence.jdbc.url"
                       value="jdbc:mysql://localhost:3306/hello-world?autoReconnect=true&amp;useSSL=false"/>
