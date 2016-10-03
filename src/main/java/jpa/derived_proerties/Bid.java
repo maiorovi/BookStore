@@ -13,6 +13,8 @@ public class Bid {
     @ManyToOne(cascade = {CascadeType.ALL})
     @JoinColumn(name = "product_id")
     private Product product;
+    @Enumerated(EnumType.STRING)
+    private BidType bidType;
 
     public Bid(){}
 
@@ -38,6 +40,14 @@ public class Bid {
 
     public void setProduct(Product product) {
         this.product = product;
+    }
+
+    public BidType getBidType() {
+        return bidType;
+    }
+
+    public void setBidType(BidType bidType) {
+        this.bidType = bidType;
     }
 
     @Override
