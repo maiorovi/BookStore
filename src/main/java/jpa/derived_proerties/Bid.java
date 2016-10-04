@@ -1,6 +1,8 @@
 package jpa.derived_proerties;
 
 import javax.persistence.*;
+import java.util.Arrays;
+import java.util.Collections;
 
 @Entity
 @Table(name = "BID")
