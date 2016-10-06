@@ -1,5 +1,8 @@
 package jpa.derived_proerties;
 
+import jpa.attribute_converters.MonetaryAmountConverter;
+import jpa.converters_example.MonetaryAmount;
+
 import javax.persistence.*;
 import java.util.Arrays;
 import java.util.Collections;
@@ -10,8 +13,12 @@ public class Bid {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
+    @Convert(
+            converter = MonetaryAmountConverter.class,
+            disableConversion = false
+    )
     @Column(name="AMOUNT")
-    private int amount;
+    private MonetaryAmount amount;
     @ManyToOne(cascade = {CascadeType.ALL})
     @JoinColumn(name = "product_id")
     private Product product;
@@ -20,7 +27,7 @@ public class Bid {
 
     public Bid(){}
 
-    public Bid(int amount) {
+    public Bid(MonetaryAmount amount) {
         this.amount = amount;
     }
 
@@ -28,11 +35,11 @@ public class Bid {
         return id;
     }
 
-    public int getAmount() {
+    public MonetaryAmount getAmount() {
         return amount;
     }
 
-    public void setAmount(int amount) {
+    public void setAmount(MonetaryAmount amount) {
         this.amount = amount;
     }
 
@@ -68,7 +75,7 @@ public class Bid {
     @Override
     public int hashCode() {
         int result = (int) (id ^ (id >>> 32));
-        result = 31 * result + amount;
+        result = 31 * result + amount.getValue().intValue();
         result = 31 * result + product.hashCode();
         return result;
     }
